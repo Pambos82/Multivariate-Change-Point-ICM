@@ -1,32 +1,10 @@
-# Generated outputs: retain only these instructions.
-/results/*
-!/results/README.md
+# Earlier local experiment outputs remain outside the implementation folders.
+/results/
 
-# Exactly four approved benchmark MAT inputs and six metadata files.
-*.mat
-/datasets/*
-!/datasets/CASP.mat
-!/datasets/MiniBooNEPID.mat
-!/datasets/Sensorlessdrivediagnosis.mat
-!/datasets/creditcard_X.mat
-!/datasets/README.md
-!/datasets/SOURCES_AND_LICENSES.md
-!/datasets/PREPROCESSING.md
-!/datasets/CITATIONS.bib
-!/datasets/SHA256SUMS.txt
-!/datasets/manifest.json
+# MATLAB dataset and output rules are scoped in matlab/.gitignore.
 
-# Local Air Quality inputs, caches and editor artifacts.
-*AirQuality*.xlsx
-*AirQuality*.csv
-*airquality*.mat
-/local_data/
-*.asv
-*.autosave
-*.m~
-*.log
-*.tmp
-.DS_Store
-Thumbs.db
+# Editor and operating-system artifacts.
 /.idea/
 /.vscode/
+.DS_Store
+Thumbs.db

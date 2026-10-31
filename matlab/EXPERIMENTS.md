@@ -4,7 +4,7 @@ This document supplements the [main README](README.md) with full-run parameters,
 
 ## Smoke test
 
-From the MATLAB repository root:
+From the `matlab/` package directory:
 
 ```matlab
 restoredefaultpath;
@@ -73,7 +73,7 @@ Jobs, input preparation and checkpoints are saved beneath `results/figure_sweeps
     'Workers',16,'OutputRoot',sweepDir);
 ```
 
-Use only one controller per run directory. The resume mechanism validates input/source hashes and saved checkpoints. If a MATLAB parallel pool already exists, its worker count must match the requested `Workers` value.
+Use only one controller per run directory. Checkpoints record dataset paths; after relocating the package, start a fresh sweep unless the recorded input paths remain available. The resume mechanism validates input/source hashes and saved checkpoints. If a MATLAB parallel pool already exists, its worker count must match the requested `Workers` value.
 
 **Before plotting**, verify that `progress.json` reports `complete` and all **2,400 jobs** are present. The figure reconstructor checks for a complete, nonduplicate CSV grid. It writes `figures_<timestamp>/` containing `figure1.png`, `figure1.fig`, `figure2.png`, `figure2.fig`, optionally `figure1.pdf` and `figure2.pdf`, `PerformanceUsed.csv` and provenance metadata.
 
