@@ -61,7 +61,7 @@ try {
         'prepare_airquality_input.m','run_real.m')
     $dataFiles = @('CASP.mat','MiniBooNEPID.mat','Sensorlessdrivediagnosis.mat','creditcard_X.mat',
         'README.md','SOURCES_AND_LICENSES.md','PREPROCESSING.md','CITATIONS.bib','SHA256SUMS.txt','manifest.json')
-    $requiredFiles = $matlabFiles + @('README.md','LICENSE','LICENSE-NOTICE.md','DATA_ATTRIBUTION.md',
+    $requiredFiles = $matlabFiles + @('README.md','EXPERIMENTS.md','LICENSE','LICENSE-NOTICE.md','DATA_ATTRIBUTION.md',
         'REPRODUCTION_SCOPE.md','PUBLICATION_VERIFICATION.md','.gitignore','PACKAGE_MANIFEST.json',
         'Prepare_GitHub_Package.bat','results\README.md')
     foreach ($name in $dataFiles) { $requiredFiles += 'datasets\' + $name }

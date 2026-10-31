@@ -23,6 +23,11 @@
       "SHA256": "29c3945abb5277b67ecf1b0947fc7d2ffdbb687369d2a5aa61b6a9f6e92da325"
     },
     {
+      "File": "EXPERIMENTS.md",
+      "Bytes": 8339,
+      "SHA256": "37775e253c646895582411d09ab28a88e6e2bb98eee6b220cc8e3e14a6d36787"
+    },
+    {
       "File": "LICENSE",
       "Bytes": 1100,
       "SHA256": "f2115dbd2f116faea81a68d4ee71990a44548021e5f24f4a0dce402d468b7011"
@@ -39,18 +44,18 @@
     },
     {
       "File": "Prepare_GitHub_Package.bat",
-      "Bytes": 7979,
-      "SHA256": "be41a9bfecc997c2f3ad6081f8733365e2d099c15868a95a84f0f42d4911bc5a"
+      "Bytes": 7996,
+      "SHA256": "c923907d68666a82df4bee42e519c922ae589eb7bf1c292d101a19512cb0dae4"
     },
     {
       "File": "README.md",
-      "Bytes": 11859,
-      "SHA256": "0d779722d8708d2b5da359aeef733aca06411661fdac927f61e986954962af06"
+      "Bytes": 7895,
+      "SHA256": "c30731edd9f8d2097b60cf7acca99b89428590928d2a1d7673214e1d28429bbf"
     },
     {
       "File": "REPRODUCTION_SCOPE.md",
-      "Bytes": 2534,
-      "SHA256": "3bcfa4cbc5761bfc3b4b4660c85d7e15187ce88c709259ea1ec82d5d03138306"
+      "Bytes": 2264,
+      "SHA256": "f8c60319f3277dc055bade16e9911bbd71c5a69ed93800ae514304afea48d519"
     },
     {
       "File": "combination.m",
@@ -162,5 +167,6 @@
       "Bytes": 4728,
       "SHA256": "15eeb96ceb21dc7c073c8f72abd1336df5c69d76e9f098c8a66ea3b31a67bef8"
     }
-  ]
+  ],
+  "UpdatedUTC": "2026-10-31T13:27:27.608Z"
 }
