@@ -42,8 +42,6 @@ Experiments write new subfolders under `results/benchmarks`, `results/figure_swe
 
 The complete 2,400-setting, 100-repetition sensitivity experiment was **not recomputed during this packaging check**. The runner was tested on four bounded jobs with 16 workers; full-figure rendering reused the existing completed performance rows. Air Quality input was externally supplied for verification and is excluded from the upload.
 
-Two packaging issues were found and corrected: the sweep no longer expects a removed paired-comparison table, and the local cluster object can honor 16 workers when the saved profile has a lower default limit. The saved MATLAB profile was not changed. The initial unsuccessful sweep output remains preserved in the preparation workspace.
-
 The complete published baseline/calibration pipelines and exact Figure 4 provenance remain unavailable. All dependency checks resolve to this package and documented MATLAB/toolbox files.
 
 Credit results contain information from [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud), available under the [Open Database License](https://opendatacommons.org/licenses/odbl/1-0/). Retain the [dataset notices and attribution](DATA_ATTRIBUTION.md).

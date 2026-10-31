@@ -39,8 +39,8 @@
     },
     {
       "File": "PUBLICATION_VERIFICATION.md",
-      "Bytes": 6486,
-      "SHA256": "43e6955c2998f78ea2358d0e3658094636957819c7c85cb4166bb1bfb81d6744"
+      "Bytes": 6147,
+      "SHA256": "7b3d914d0f5dbcb9ef68ae4d4dbc6e722ba2dfe4e233a3b8f57f8b78572073d3"
     },
     {
       "File": "README.md",
@@ -158,5 +158,5 @@
       "SHA256": "15eeb96ceb21dc7c073c8f72abd1336df5c69d76e9f098c8a66ea3b31a67bef8"
     }
   ],
-  "UpdatedUTC": "2026-10-31T15:03:36.156Z"
+  "UpdatedUTC": "2026-10-31T15:20:49.925Z"
 }
