@@ -131,7 +131,6 @@ fprintf(fid,'\nDelays are conditional on post-change detection. A false alarm is
 fprintf(fid,'The first two betting positions are startup. Runs with fewer than 100 repetitions are smoke tests or exploratory runs, not the full paper protocol.\n\n');
 fprintf(fid,'## Published Table 1 reference\n\n');
 fprintf(fid,'Performance.csv includes the published detection/false-alarm/mean-delay values and current-minus-paper differences. ');
-fprintf(fid,'These references used the historical implementation without density scaling; previous audits reproduced the reported values at epsilon=10, whereas the manuscript states 100. ');
 fprintf(fid,'This variant at epsilon=%g is not claimed to produce identical published numbers.\n\n',Metadata.Options.Epsilon);
 fprintf(fid,'## Output files\n\n');
 fprintf(fid,'- benchmark.mat: exact p-values, martingales, full diagnostics and settings.\n');
