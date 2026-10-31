@@ -2,7 +2,7 @@
 
 MATLAB implementation of the proposed method in *Multivariate Change-Point Detection Using Feature-Based Inductive Conformal Martingales*, by **Charalambos Eliades** and **Harris Papadopoulos**.
 
-This repository provides a reproducible **normalized-betting variant** of the proposed method, together with the benchmark and figure-generation workflows. It is **not an exact reproduction of all historical results**: the original experimental implementation used unnormalized kNN betting, whereas this package normalizes those densities. See [Reproduction scope](REPRODUCTION_SCOPE.md) for further qualifications.
+
 
 ## What can be reproduced?
 
@@ -67,7 +67,6 @@ prepare_airquality_input('YOUR_DOWNLOAD/AirQualityUCI.xlsx',localAirDir);
 
 This experiment produces the normalized martingale and Figure 3. Because the real stream is **unlabeled**, it does not establish a ground-truth detection delay or false-alarm rate.
 
-## What is normalized?
 
 `combination.m` retains the original **uniform candidate**, **three interpolated histogram candidates**, and **cautious candidate selection**. The three kNN betting densities (`k = 5, 10, 15`) are each divided by their integral over `[0,1]`, calculated from **past p-values** before the current p-value is evaluated. The histogram interpolation formulas have **not** been changed.
 
@@ -87,7 +86,7 @@ This experiment produces the normalized martingale and Figure 3. Because the rea
 | `prepare_airquality_input.m`, `run_real.m` | Air Quality preprocessing and Figure 3 |
 | `datasets/` | Four prepared benchmark inputs and their source/licensing metadata |
 
-The 11 MATLAB runtime files cover the workflows above. The repository does **not** contain the historical unnormalized implementation, an original-versus-normalized comparison runner, or the complete baseline reproduction pipelines.
+The 11 MATLAB runtime files cover the workflows above. 
 
 ## Data, licensing and citations
 
