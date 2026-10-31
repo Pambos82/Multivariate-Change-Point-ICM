@@ -70,7 +70,7 @@ This experiment produces the normalized martingale and Figure 3. Because the rea
 
 `combination.m` retains the original **uniform candidate**, **three interpolated histogram candidates**, and **cautious candidate selection**. The three kNN betting densities (`k = 5, 10, 15`) are each divided by their integral over `[0,1]`, calculated from **past p-values** before the current p-value is evaluated. The histogram interpolation formulas have **not** been changed.
 
-`knn_betting_prepare.m` evaluates these integrals using piecewise analytical logarithmic antiderivatives in double precision. If a candidate is nonintegrable because of repeated observations, history is insufficient, or numerical evaluation fails, the implementation uses a **uniform-betting fallback**. Such a fallback is *not* presented as a normalized version of a divergent density.
+`knn_betting_prepare.m` evaluates these integrals using piecewise analytical logarithmic antiderivatives in double precision. If a candidate is nonintegrable because of repeated observations, history is insufficient, or numerical evaluation fails, the implementation uses a **uniform-betting fallback**. 
 
 > **Validity qualification:** Floating-point evaluation of analytical integrals and numerical testing alone do not establish an anytime-valid martingale. That requires appropriate conditional null behavior of the p-values, predictable selection using past information, nonnegative bets, and normalization/integrability for every selected candidate—including the unchanged histograms. No rigorous anytime-validity guarantee is claimed solely from this implementation.
 
