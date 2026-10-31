@@ -1,0 +1,48 @@
+{
+  "CheckedDate": "2026-10-29",
+  "Files": [
+    {
+      "File": "CASP.mat",
+      "Variable": "CASP",
+      "Class": "table",
+      "Rows": 45730,
+      "Columns": 9,
+      "Bytes": 1915886,
+      "SHA256": "48343f1531ca24a1319a0f3e6d93f88ad5e9a16f981be2d2ec2cd6fe1a870694",
+      "License": "CC-BY-4.0"
+    },
+    {
+      "File": "MiniBooNEPID.mat",
+      "Variable": "MiniBooNEPID",
+      "Class": "table",
+      "Rows": 130064,
+      "Columns": 50,
+      "Bytes": 42847843,
+      "SHA256": "3920d20fe065e2604f60e9a66cd75b069c2ccc6e02c3022b4f1f1c8aa9192caa",
+      "License": "CC-BY-4.0"
+    },
+    {
+      "File": "Sensorlessdrivediagnosis.mat",
+      "Variable": "Sensorlessdrivediagnosis",
+      "Class": "table",
+      "Rows": 58509,
+      "Columns": 48,
+      "Bytes": 16510155,
+      "SHA256": "5d31f8fef208f4fb7ca065b193854a8e2e1128b699aa714c6cff0ecaee25e6aa",
+      "License": "CC-BY-4.0"
+    },
+    {
+      "File": "creditcard_X.mat",
+      "Variable": "creditcard_X",
+      "Class": "double",
+      "Rows": 284807,
+      "Columns": 29,
+      "Bytes": 61823738,
+      "SHA256": "6b422568deaa07c2d53cf8f13397e7cc1330b3f2e8927f99ef5a8d10af1c3df6",
+      "License": "ODbL-1.0 AND DbCL-1.0"
+    }
+  ],
+  "AirQualityIncluded": false,
+  "PreprocessingDocumentation": "PREPROCESSING.md",
+  "LicenseDocumentation": "SOURCES_AND_LICENSES.md"
+}

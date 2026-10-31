@@ -1,0 +1,12 @@
+# Scope of the normalized reproduction
+
+This package regenerates the proposed method's benchmark and sensitivity experiment setups with normalized kNN betting at cautious epsilon = 100. It includes no unnormalized betting implementation. It is a corrected methodological variant and does not promise identical historical numbers.
+
+- **Table 1:** the four proposed-method dataset experiments run from the bundled inputs. The runner records the paper reference values: Protein 0.84 / 0.01 / 83.9; Particle 1.00 / 0.01 / 15.1; Sensorless 0.99 / 0.00 / 60.7; Credit 0.99 / 0.01 / 83.5 (detection / false alarm / mean delay). Historical matching used unnormalized betting and epsilon = 10; this package uses normalized betting and epsilon = 100.
+- **Figures 1 and 2:** complete normalized grids can be computed with the supplied runner. Historical Figure 1 jitter was unseeded. The new seeded sweep shares its lambda = 1e-3 subset across both figures. The original K = 1 covariance convention remains. These choices are explicit and prevent claiming that every archival difference measures normalization alone.
+- **Figure 3:** normalized Air Quality can be regenerated after independently preparing the original XLSX. Air Quality is excluded from publication because its source page contains conflicting terms. The first threshold crossing and later sharp growth are different events; week 33 is not an established change-point label.
+- **Baseline Table 1 rows and Figure 4:** the supplied material contains generic QuantTree helpers and archived outputs, but not the complete published QuantTree/QT-EWMA experiment/calibration pipelines. Those results cannot be faithfully regenerated here. The available Figure 4 CSV used 4,096 reference observations and monitoring starting around week 36, whereas the article's plotted curve starts around week 26; it is not supplied as an exact reproduction.
+
+Original research code, archived results and earlier exports are preserved outside this package. The runtime functions locate all four distributed datasets relative to this package, unless an explicit `DataDir` or `COPA_DATA_DIR` override is supplied. Air Quality is the only documented external dataset for the proposed-method figure workflow.
+
+Verification reports distinguish full benchmark runs, bounded sweep/smoke tests, rendering of existing full normalized performance rows, and experiments that were not rerun. Passing a normalization test alone does not establish all assumptions needed for an anytime-valid false-alarm guarantee.

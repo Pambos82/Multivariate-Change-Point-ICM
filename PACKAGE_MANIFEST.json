@@ -1,0 +1,166 @@
+{
+  "FormatVersion": 3,
+  "CreatedUTC": "2026-10-30T19:10:06.178947+00:00",
+  "DefaultBetting": "normalized",
+  "Epsilon": 100,
+  "LookBackWindow": 5000,
+  "AlarmThreshold": 100,
+  "MatlabFiles": 11,
+  "DatasetCount": 4,
+  "BettingFunction": "combination.m",
+  "Scope": "Proposed-method benchmark and Figures 1-3 workflows; baseline pipelines unavailable",
+  "RuntimeOutputsIncluded": false,
+  "ManifestExcludesItself": true,
+  "Files": [
+    {
+      "File": ".gitignore",
+      "Bytes": 643,
+      "SHA256": "bd99e319548de7584a9c1c875756218c4ba204a4c144d3e013d3d42c6b1a3bd9"
+    },
+    {
+      "File": "DATA_ATTRIBUTION.md",
+      "Bytes": 1588,
+      "SHA256": "29c3945abb5277b67ecf1b0947fc7d2ffdbb687369d2a5aa61b6a9f6e92da325"
+    },
+    {
+      "File": "LICENSE",
+      "Bytes": 1100,
+      "SHA256": "f2115dbd2f116faea81a68d4ee71990a44548021e5f24f4a0dce402d468b7011"
+    },
+    {
+      "File": "LICENSE-NOTICE.md",
+      "Bytes": 2196,
+      "SHA256": "503e95a13423cd9f1655bb591b5fcd100f21558e7b5105d5930b8d2583812c43"
+    },
+    {
+      "File": "PUBLICATION_VERIFICATION.md",
+      "Bytes": 6983,
+      "SHA256": "f2c04fc4108827757562635d880a6b1b4cf29d16c94d95c6e0147485673ccea7"
+    },
+    {
+      "File": "Prepare_GitHub_Package.bat",
+      "Bytes": 7979,
+      "SHA256": "be41a9bfecc997c2f3ad6081f8733365e2d099c15868a95a84f0f42d4911bc5a"
+    },
+    {
+      "File": "README.md",
+      "Bytes": 11859,
+      "SHA256": "0d779722d8708d2b5da359aeef733aca06411661fdac927f61e986954962af06"
+    },
+    {
+      "File": "REPRODUCTION_SCOPE.md",
+      "Bytes": 2534,
+      "SHA256": "3bcfa4cbc5761bfc3b4b4660c85d7e15187ce88c709259ea1ec82d5d03138306"
+    },
+    {
+      "File": "combination.m",
+      "Bytes": 12369,
+      "SHA256": "0d2e033fa9733ab6e338c1e32e2aa4f756470d212e4e45957a39bc503e26adb1"
+    },
+    {
+      "File": "datasets/CASP.mat",
+      "Bytes": 1915886,
+      "SHA256": "48343f1531ca24a1319a0f3e6d93f88ad5e9a16f981be2d2ec2cd6fe1a870694"
+    },
+    {
+      "File": "datasets/CITATIONS.bib",
+      "Bytes": 4562,
+      "SHA256": "bd295a781e7044e8d199f6e0484849e9481169b92445455b78808fbd16732f04"
+    },
+    {
+      "File": "datasets/MiniBooNEPID.mat",
+      "Bytes": 42847843,
+      "SHA256": "3920d20fe065e2604f60e9a66cd75b069c2ccc6e02c3022b4f1f1c8aa9192caa"
+    },
+    {
+      "File": "datasets/PREPROCESSING.md",
+      "Bytes": 8773,
+      "SHA256": "434d921cd54ef2d98b310e706969a8c29ecb1aa5c1e43a331ee6fb29ab3a9dff"
+    },
+    {
+      "File": "datasets/README.md",
+      "Bytes": 2357,
+      "SHA256": "849969d3acea4fd523da1a31f54ce28d19720e4af5e2fb7e0939f3e0f2886811"
+    },
+    {
+      "File": "datasets/SHA256SUMS.txt",
+      "Bytes": 336,
+      "SHA256": "199b58895781d7099c5ad38355346853817ee46483b962c9ad2538b6954f32ad"
+    },
+    {
+      "File": "datasets/SOURCES_AND_LICENSES.md",
+      "Bytes": 10159,
+      "SHA256": "f67f2998fd643032ea5357729820953541434102579732a9e47d6a0a096c6e4b"
+    },
+    {
+      "File": "datasets/Sensorlessdrivediagnosis.mat",
+      "Bytes": 16510155,
+      "SHA256": "5d31f8fef208f4fb7ca065b193854a8e2e1128b699aa714c6cff0ecaee25e6aa"
+    },
+    {
+      "File": "datasets/creditcard_X.mat",
+      "Bytes": 61823738,
+      "SHA256": "6b422568deaa07c2d53cf8f13397e7cc1330b3f2e8927f99ef5a8d10af1c3df6"
+    },
+    {
+      "File": "datasets/manifest.json",
+      "Bytes": 1394,
+      "SHA256": "5bc170472f97bb679a700885227b96b52edc79c4e7ced333ad2c47139a7c8605"
+    },
+    {
+      "File": "knn_betting_prepare.m",
+      "Bytes": 3816,
+      "SHA256": "811c7e392918db7d1c4764b83439eea0e9e4bb809285901741b357ec605e5ee9"
+    },
+    {
+      "File": "knn_ellipsoid_pdf.m",
+      "Bytes": 1281,
+      "SHA256": "38145fef8182a18fb154ef9601c93226d9c37b2a239588e2cac223c5b1afe82e"
+    },
+    {
+      "File": "prepare_airquality_input.m",
+      "Bytes": 2010,
+      "SHA256": "4c9c9b19f39cd034e42379e55bd2a93fda99a54e526f7fa22c722107c56672d6"
+    },
+    {
+      "File": "pvalues.m",
+      "Bytes": 1790,
+      "SHA256": "8903ac582f3b5b269cc498a779ae3f0141926fe1b6220fd988905843e75de930"
+    },
+    {
+      "File": "reconstruct_copa_figures.m",
+      "Bytes": 12013,
+      "SHA256": "ee1a86c116ef03406604a6da04a573e20834475cfefd20ca35a0c1035f75ab21"
+    },
+    {
+      "File": "results/README.md",
+      "Bytes": 619,
+      "SHA256": "c7d3a9b197a32f99c2dcd9f89e53b0f154993ca8971427bd67839d92b906bcc0"
+    },
+    {
+      "File": "run_benchmarks.m",
+      "Bytes": 8294,
+      "SHA256": "4636b48538ac3863c7eb77efc53eecd616f94e2dac0f61a4f8cd86ce1db02b43"
+    },
+    {
+      "File": "run_full_figure_sweeps.m",
+      "Bytes": 23270,
+      "SHA256": "9c54b2d14c44b034b95ed72b038e8f00ef77da45a5e1656c731d802c0817f575"
+    },
+    {
+      "File": "run_knn_cm_experiment.m",
+      "Bytes": 5879,
+      "SHA256": "edecf210d456dc750147fe3cb13f45b484dafd2f751c64584dca3cde3bbd0392"
+    },
+    {
+      "File": "run_real.m",
+      "Bytes": 10804,
+      "SHA256": "bc694edacd9605fd960258afbf3ba5a384dbace31ed103a8904f5053e77574a7"
+    },
+    {
+      "File": "summarize_results.m",
+      "Bytes": 4728,
+      "SHA256": "15eeb96ceb21dc7c073c8f72abd1336df5c69d76e9f098c8a66ea3b31a67bef8"
+    }
+  ]
+}
