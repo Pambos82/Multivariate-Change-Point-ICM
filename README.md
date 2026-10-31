@@ -2,7 +2,7 @@
 
 MATLAB benchmark and figure-generation workflows associated with *Multivariate Change-Point Detection Using Feature-Based Inductive Conformal Martingales*, by **Charalambos Eliades** and **Harris Papadopoulos**.
 
-The commands below generate outputs using the included implementation and recorded parameters. Exact agreement with every result in the article has not been established.
+The commands below generate outputs using the included implementation and recorded parameters.
 
 ## Experiment workflows
 
