@@ -1,6 +1,6 @@
 # Data attribution for research outputs
 
-This package generates new normalized-betting results. Retain this attribution with publicly shared tables and figures. The license of a source database remains distinct from the MIT software license.
+This package generates experiment results. Retain this attribution with publicly shared tables and figures. The license of a source database remains distinct from the MIT software license.
 
 Credit tables, curves and other produced works contain information from [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud), by Machine Learning Group - ULB, collected through a research collaboration with Worldline, available under the [Open Database License 1.0](https://opendatacommons.org/licenses/odbl/1-0/). The individual contents are covered by [Database Contents License 1.0](https://opendatacommons.org/licenses/dbcl/1-0/). Retain the database attribution with public Credit results. The complete machine-readable derivative is supplied in `datasets/creditcard_X.mat`; source attribution, modifications and license notices are in [the dataset documentation](datasets/SOURCES_AND_LICENSES.md).
 

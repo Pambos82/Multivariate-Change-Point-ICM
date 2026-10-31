@@ -1,6 +1,6 @@
 # Experiment details and reproducibility notes
 
-This document supplements the [main README](README.md) with full-run parameters, output artifacts, checkpoint behavior, and historical reproduction notes. It describes the normalized-betting publication package; it is not a record of newly executed tests.
+This document supplements the [main README](README.md) with full-run parameters, output artifacts, checkpoint behavior, and reproducibility notes. It describes the included MATLAB workflows; it is not a record of newly executed tests.
 
 ## Smoke test
 
@@ -13,7 +13,7 @@ setenv('COPA_DATA_DIR','');
 [All, Tables, smokeDir] = run_benchmarks('Reps',1);
 ```
 
-Runs one normalized repetition on each benchmark dataset. This is **not** a full benchmark or figure sweep, and does not require Air Quality. Dataset hashes and earlier verification findings are recorded in the supplied metadata and [publication verification history](PUBLICATION_VERIFICATION.md).
+Runs one repetition on each benchmark dataset. This is **not** a full benchmark or figure sweep, and does not require Air Quality. Dataset hashes and earlier verification findings are recorded in the supplied metadata and [publication verification history](PUBLICATION_VERIFICATION.md).
 
 ## Table 1: proposed-method benchmarks
 
@@ -42,9 +42,9 @@ Standardization, nonconformity measures, conformal p-values and detection rules 
 
 Default console output is a final table with these columns, in order: `Dataset`, `Repetitions`, `DetectionRate`, `FalseAlarmRate`, `MissRate`, `MedianDelay`, `MeanDelay`, `StdDelay`. Progress/debug output is suppressed by default.
 
-Each run creates a new `results/benchmarks/benchmark_*` directory containing `benchmark.mat`, per-dataset MAT files and CSV summary tables. `Tables.Performance` contains detection, false-alarm and miss rates; delay statistics are calculated **among detected repetitions**. Additional tables preserve per-repetition outcomes, normalization constants, candidate-selection frequencies, and numerical issues. The performance summary includes historical paper Table 1 reference values and their differences from the new run.
+Each run creates a new `results/benchmarks/benchmark_*` directory containing `benchmark.mat`, per-dataset MAT files and CSV summary tables. `Tables.Performance` contains detection, false-alarm and miss rates; delay statistics are calculated **among detected repetitions**. Additional tables preserve per-repetition outcomes, betting diagnostics, candidate-selection frequencies, and numerical issues. The performance summary includes historical paper Table 1 reference values and their differences from the new run.
 
-To rerun saved p-values with the normalized-betting procedure:
+To rerun saved p-values with the cautious betting procedure:
 
 ```matlab
 [All, Tables, replayDir] = run_benchmarks( ...
@@ -64,7 +64,7 @@ The full sweep covers **2,400 distinct settings with 100 repetitions each**:
 - Ellipsoid NCM for `K = 1:100` at each `lambda` in `{1e-5, 1e-4, 1e-3, 1e-2, 1e-1}`.
 - Distance NCM for `K = 1:100`.
 
-Figure 1 uses the ellipsoid subset at `lambda = 1e-3` and the distance NCM. Figure 2 compares all five ellipsoid `lambda` settings. Both use the same normalized betting functions; the covariance diagonal adjustment in the ellipsoid NCM and betting-density normalization are distinct.
+Figure 1 uses the ellipsoid subset at `lambda = 1e-3` and the distance NCM. Figure 2 compares all five ellipsoid `lambda` settings. Both use the same cautious betting procedure.
 
 Jobs, input preparation and checkpoints are saved beneath `results/figure_sweeps/full_*`. To resume **the same** run:
 
@@ -95,22 +95,20 @@ prepare_airquality_input('YOUR_DOWNLOAD/AirQualityUCI.xlsx',localAirDir);
 
 The XLSX preserves measurement precision that is lost in the CSV. Preparation preserves the historical date-only timetable row times.
 
-Default real-stream parameters are 3,000 reference observations, NCM `K = 50`, covariance adjustment `lambda = 1e-3`, seed `42`, normalized betting, cautious `epsilon = 100`, and alarm threshold `100`.
+Default real-stream parameters are 3,000 reference observations, NCM `K = 50`, covariance adjustment `lambda = 1e-3`, seed `42`, cautious `epsilon = 100`, and alarm threshold `100`.
 
 Each run creates `results/airquality/run_<timestamp>/` containing `airquality_results.mat`, `airquality_results.md`, summary and diagnostic CSV files, provenance and `figure3.png`, `figure3.fig`, `figure3.pdf`. Log martingale values are used for stable plotting when linear martingale values overflow. **Unlabeled data cannot establish a false-alarm rate or a ground-truth detection delay.**
 
-## Betting implementation and scientific limitations
+## Betting implementation
 
-`combination.m` preserves the uniform candidate, the three interpolated histogram candidates, and cautious selection. The three kNN betting densities for `k = 5, 10, 15` are divided by their respective integrals over `[0,1]`; these integrals are determined using historical p-values before evaluating the next p-value. Normalized values update the candidate histories used by cautious selection, while histogram interpolation remains unchanged.
+`combination.m` uses a uniform candidate, three interpolated histogram candidates, and three kNN candidates with `k = 5, 10, 15`. Cautious selection uses past candidate histories. The helper `knn_betting_prepare.m` prepares history-dependent quantities before evaluating the next p-value. Insufficient or unsuitable histories and numerical failures use a uniform-betting fallback.
 
-`knn_betting_prepare.m` evaluates piecewise analytical logarithmic antiderivatives in double precision using the original nearest-neighbor and boundary definitions. Nonintegrable repeated histories, insufficient history and numerical failures fall back to uniform betting; this is not equivalent to normalizing a divergent density.
-
-Floating-point calculations and numerical tests **do not establish a rigorous anytime-valid guarantee**. Such a guarantee additionally requires the conditional null law assumed for the p-values, predictable selection from past information, nonnegative bets, and normalized/integrable behavior of every selectable candidate (including unchanged histograms).
+Empirical tests alone do not establish an anytime-valid false-alarm guarantee; the theoretical assumptions on the p-values and predictable betting procedure must also hold.
 
 ## Publication packaging
 
 Generated results, figures, checkpoints, logs and verification reports belong under separate run folders in `results/`. Git ignores runtime output but retains `results/README.md`. Research data and saved historical runs remain separately maintained.
 
-`PACKAGE_MANIFEST.json` records the publication files and hashes, excluding generated outputs and the manifest itself. Running `Prepare_GitHub_Package.bat` copies the files listed in the manifest into a **new** directory under `results/exports/`. It excludes generated results, logs, caches and local Air Quality input, does not upload anything, and refuses existing destinations. An optional export destination must also be within `results/exports/`.
+`PACKAGE_MANIFEST.json` records the publication files and their checksums, excluding generated outputs and the manifest itself. Only `results/README.md` is tracked from the results directory.
 
-Before publishing, check that the MATLAB source, documentation, four benchmark datasets, license notices and attribution files are present, and that generated results and local Air Quality files are excluded. Verify the redistribution permissions and GitHub size limits of the benchmark datasets independently.
+Keep the dataset license notices and attribution files with redistributed data and public research outputs. Generated results and local Air Quality inputs remain excluded from the publication files.

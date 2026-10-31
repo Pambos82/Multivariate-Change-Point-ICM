@@ -1,19 +1,17 @@
-# COPA 2026: Multivariate Change-Point Detection with Normalized kNN Betting
+# COPA 2026: Multivariate Change-Point Detection
 
-MATLAB implementation of the proposed method in *Multivariate Change-Point Detection Using Feature-Based Inductive Conformal Martingales*, by **Charalambos Eliades** and **Harris Papadopoulos**.
+MATLAB benchmark and figure-generation workflows associated with *Multivariate Change-Point Detection Using Feature-Based Inductive Conformal Martingales*, by **Charalambos Eliades** and **Harris Papadopoulos**.
 
+The commands below generate outputs using the included implementation and recorded parameters. Exact agreement with every result in the article has not been established.
 
-
-## What can be reproduced?
+## Experiment workflows
 
 | Article output | MATLAB entry point | Scope |
 |---|---|---|
 | Table 1 — proposed-method rows | `run_benchmarks()` | Four datasets; detection, false-alarm and miss rates; detection-delay statistics |
 | Figures 1 and 2 | `run_full_figure_sweeps()` and `reconstruct_copa_figures()` | Sensitivity analysis for the ellipsoid and distance nonconformity measures |
-| Figure 3 — Air Quality | `prepare_airquality_input()` and `run_real()` | Normalized martingale using separately obtained Air Quality data |
+| Figure 3 — Air Quality | `prepare_airquality_input()` and `run_real()` | Martingale using separately obtained Air Quality data |
 | Table 1 — QuantTree/QT-EWMA baselines; Figure 4 | **Not included** | The complete published baseline experiment and calibration pipelines are not available in this package |
-
-**Note:** Normalization of the *betting density* and covariance diagonal adjustment in the ellipsoid NCM (`S + lambda*I`) are separate operations. Both NCMs use the same normalized betting procedure.
 
 ## Requirements
 
@@ -46,7 +44,7 @@ The default benchmark uses **100 repetitions per dataset**, seed `42`, reference
 
 `Tables.Performance` reports detection, false-alarm and miss rates, plus the mean, median and standard deviation of detection delay **among detected repetitions**. CSV and MAT outputs, including per-repetition diagnostics, are saved in a new benchmark run directory.
 
-### Generate Figures 1 and 2 with normalized betting
+### Generate Figures 1 and 2
 
 ```matlab
 [Performance, sweepDir] = run_full_figure_sweeps('Workers',16);
@@ -65,28 +63,24 @@ prepare_airquality_input('YOUR_DOWNLOAD/AirQualityUCI.xlsx',localAirDir);
 [Stream, Summary, airDir] = run_real('DataDir',localAirDir);
 ```
 
-This experiment produces the normalized martingale and Figure 3. Because the real stream is **unlabeled**, it does not establish a ground-truth detection delay or false-alarm rate.
+This experiment produces the martingale and Figure 3. Because the real stream is **unlabeled**, it does not establish a ground-truth detection delay or false-alarm rate.
 
+## Betting functions
 
-`combination.m` retains the original **uniform candidate**, **three interpolated histogram candidates**, and **cautious candidate selection**. The three kNN betting densities (`k = 5, 10, 15`) are each divided by their integral over `[0,1]`, calculated from **past p-values** before the current p-value is evaluated. The histogram interpolation formulas have **not** been changed.
-
-`knn_betting_prepare.m` evaluates these integrals using piecewise analytical logarithmic antiderivatives in double precision. If a candidate is nonintegrable because of repeated observations, history is insufficient, or numerical evaluation fails, the implementation uses a **uniform-betting fallback**. 
-
-> **Validity qualification:** Floating-point evaluation of analytical integrals and numerical testing alone do not establish an anytime-valid martingale. That requires appropriate conditional null behavior of the p-values, predictable selection using past information, nonnegative bets, and normalization/integrability for every selected candidate—including the unchanged histograms. No rigorous anytime-validity guarantee is claimed solely from this implementation.
-
+The cautious betting procedure in `combination.m` uses a uniform candidate, three interpolated histogram candidates, and three kNN candidates with `k = 5, 10, 15`. Candidate selection uses past candidate histories. `knn_betting_prepare.m` prepares the history-dependent quantities before the current p-value is evaluated. Unsuitable histories or numerical failures use a uniform-betting fallback. The implementation details and interval-boundary conventions are documented in the MATLAB source.
 
 ## Repository contents
 
 | Files | Purpose |
 |---|---|
-| `combination.m`, `knn_betting_prepare.m` | Cautious betting and kNN-density normalization |
+| `combination.m`, `knn_betting_prepare.m` | Cautious betting and kNN preparation |
 | `pvalues.m`, `knn_ellipsoid_pdf.m`, `run_knn_cm_experiment.m` | Conformal p-values, NCMs and experiment engine |
 | `run_benchmarks.m`, `summarize_results.m` | Table 1 benchmarks and summaries |
 | `run_full_figure_sweeps.m`, `reconstruct_copa_figures.m` | Figures 1–2 sweeps and plots |
 | `prepare_airquality_input.m`, `run_real.m` | Air Quality preprocessing and Figure 3 |
 | `datasets/` | Four prepared benchmark inputs and their source/licensing metadata |
 
-The 11 MATLAB runtime files cover the workflows above. 
+The 11 MATLAB runtime files cover the workflows above.
 
 ## Data, licensing and citations
 
@@ -101,6 +95,5 @@ When using this code, cite the associated article and the relevant datasets. See
 Generated results, figures, logs, and checkpoints belong in `results/` and are ignored by Git; `results/README.md` is retained. **Do not commit local Air Quality files, temporary outputs, or private research results.**
 
 - [Experiment details, outputs, and resuming runs](EXPERIMENTS.md)
-- [Reproduction scope and limitations](REPRODUCTION_SCOPE.md)
 - [Publication verification history](PUBLICATION_VERIFICATION.md)
 - [Data preprocessing](datasets/PREPROCESSING.md)

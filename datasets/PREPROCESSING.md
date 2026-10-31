@@ -64,9 +64,9 @@ The unusual first six Sensorless table labels preserve the supplied MATLAB impor
 2. Each repetition randomly permutes rows and reserves 4,096 reference observations. Two disjoint 256-observation segments are selected from the remaining pool.
 3. Standardization uses the reference-set mean and sample standard deviation, `std(TR,0,1)`. Standard deviations below `1e-12` become 1. The same reference statistics transform both monitored segments. Stored datasets are not standardized globally.
 4. One independent shift vector, `0.1*randn(1,d)`, is added to every post-change observation. The pre-change segment is unshifted.
-5. Existing p-value, betting, alarm and NCM computations are unchanged by publication packaging. This package uses normalized kNN betting only; the original implementation remains in the separate source research folder.
+5. Existing p-value, betting, alarm and NCM computations are unchanged by publication packaging.
 
-Generator, seeding and preparation order matter. The legacy Table 1 driver starts Twister at 42 and interleaves preparation and experiments. Historical Figure 1 did not seed initial jitter; Figure 2 seeded preparation. The new full normalized sweep prepares all datasets using Twister/Ziggurat at 42 in Protein, Particle, Sensorless, Credit order and resets each experiment to Threefry/Inversion at 42. See [the package instructions](../README.md). Table 1 and sensitivity sweeps do not use identical streams.
+Generator, seeding and preparation order matter. The benchmark runner starts Twister at seed 42 and interleaves data preparation and experiments. The full sensitivity sweep prepares all datasets using Twister/Ziggurat at seed 42 in Protein, Particle, Sensorless, Credit order and resets each experiment to Threefry/Inversion at seed 42. See [the package instructions](../README.md). The benchmark and sensitivity sweep therefore do not use identical random streams.
 
 ## Air Quality: local preparation only
 
@@ -88,4 +88,4 @@ The helper refuses to overwrite `airquality.mat`. It constructs `AirQualityUCI` 
 
 Subsequent preparation selects timetable variables 2:14, discards the third selected measurement (`NMHC_GT_`), changes sentinel `-200` to `NaN`, and removes rows missing any retained measurement. This leaves **6,941 rows x 12 measurements**: CO, PT08.S1, C6H6, PT08.S2, NOx, PT08.S3, NO2, PT08.S4, PT08.S5, temperature, relative humidity and absolute humidity. Original temporal order is retained. The first 3,000 rows form the reference set; 3,941 are monitored. Week is `floor(days(tt-tt(1))/7)+1`, using cleaned date-only RowTimes.
 
-The normalized-only `run_real` generates Figure 3 and writes a new timestamped `results/airquality` subfolder. A short check of the four bundled benchmark inputs uses `run_benchmarks('Reps',1)` without requiring Air Quality. Raw or prepared local Air Quality inputs must remain outside the publication files.
+The `run_real` entry point generates Figure 3 and writes a new timestamped `results/airquality` subfolder. A short check of the four bundled benchmark inputs uses `run_benchmarks('Reps',1)` without requiring Air Quality. Raw or prepared local Air Quality inputs must remain outside the publication files.
