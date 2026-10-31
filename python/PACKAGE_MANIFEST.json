@@ -1,6 +1,6 @@
 {
   "FormatVersion": 1,
-  "CreatedUTC": "2026-10-31T20:30:02.725162+00:00",
+  "CreatedUTC": "2026-10-31T21:22:51.975255+00:00",
   "Implementation": "Python",
   "ScientificDefaults": {
     "Epsilon": 100,
@@ -51,13 +51,13 @@
     },
     {
       "File": "README.md",
-      "Bytes": 5606,
-      "SHA256": "3ea22003a08450cc6c7d4930106068e7879fe8a0512f6a0839dddab2a082269a"
+      "Bytes": 5980,
+      "SHA256": "9edf6fed06e124f295d026840fd62a765156674267dbef38e924b0de5fd357bf"
     },
     {
       "File": "VERIFICATION.md",
-      "Bytes": 12283,
-      "SHA256": "8b25be430c7c8f56a15be29cd8b437a6bdb69c4827a8e89269b432320815238d"
+      "Bytes": 16193,
+      "SHA256": "a972410f562883f640846c72c9b42875e767e9dca2e172472fadfc48b820e4d6"
     },
     {
       "File": "copa2026/__init__.py",
@@ -66,8 +66,8 @@
     },
     {
       "File": "copa2026/_fast_betting.py",
-      "Bytes": 7269,
-      "SHA256": "9c1ec0e9d4bb6d05af5630efe3fb0629aedbb02e37ef43fb0efe8657bfd7e089"
+      "Bytes": 7386,
+      "SHA256": "08e3bf26dab3a50e18cd1feb1481c7b8e1ebf5c3f686b3e0878e42c0efe401c1"
     },
     {
       "File": "copa2026/benchmarks.py",
@@ -76,8 +76,8 @@
     },
     {
       "File": "copa2026/betting.py",
-      "Bytes": 9933,
-      "SHA256": "8fe6cdc7e67e0b522f66b08ff9fc45875318991e00a8f99d77739fad66ad4f41"
+      "Bytes": 10053,
+      "SHA256": "c04fc99962fd45fa2aec1c5c556f01112787bf0dd77d9dafa78c1688c85d243e"
     },
     {
       "File": "copa2026/data.py",
@@ -191,8 +191,8 @@
     },
     {
       "File": "tests/fixtures/README.md",
-      "Bytes": 1245,
-      "SHA256": "f3279ee5fd105f89a77de6bd980a0beda26e8dcbedb0968843ba6c61133f5bc3"
+      "Bytes": 1560,
+      "SHA256": "6f4820a2176ee8494b60c3b73bf720dfbe2cb1b3d9f6425766012c73ac734c56"
     },
     {
       "File": "tests/fixtures/benchmark_matlab_v7.mat",
@@ -255,9 +255,14 @@
       "SHA256": "6fa6f10ae67cd373da48d11ecbcc28e4bf223e7ec3586fce0240395b2240394e"
     },
     {
+      "File": "tests/fixtures/histogram_boundaries.npz",
+      "Bytes": 54429,
+      "SHA256": "11c429a8df2bc3d1bcefbf79c41f821d029c8867894551aeb43c87fc87b280a2"
+    },
+    {
       "File": "tests/fixtures/metadata.json",
-      "Bytes": 4097,
-      "SHA256": "7ba2d178318a55c784d93603d829d27da3fc775b89517a0f7b59b2724e3fe490"
+      "Bytes": 5979,
+      "SHA256": "41bf0115aa0d25f001d5aa9587d101ab4bd11b3978e9e6eb2d4be7797b1c6944"
     },
     {
       "File": "tests/fixtures/neighbor_ties.npz",
@@ -308,6 +313,11 @@
       "File": "tests/test_figures.py",
       "Bytes": 5116,
       "SHA256": "00b996eaa2e2103bee92f82edafae628da26d8f23427277832152af08ef49732"
+    },
+    {
+      "File": "tests/test_histogram_boundaries.py",
+      "Bytes": 3112,
+      "SHA256": "badac520999770df52b532dec80810d7b57b9f1fbb2cbb9c64fda8b7a6084f76"
     },
     {
       "File": "tests/test_matlab_reference.py",

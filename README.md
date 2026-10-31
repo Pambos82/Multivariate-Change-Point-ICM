@@ -34,7 +34,7 @@ python -m venv .venv
 
 Omit `--reps 1` for the full 100-repetition benchmark. See the [Python README](python/README.md) and [experiment guide](python/EXPERIMENTS.md) for setup on other platforms, full sensitivity sweeps, and the separate figure reconstruction command.
 
-The [Python verification summary](python/VERIFICATION.md) documents the complete 240,000-experiment sensitivity run, Figures 1–3, and 500 experiments checked against MATLAB using identical inputs. Native random sampling differs across languages; shared-input checks verify the calculations separately.
+The [Python verification summary](python/VERIFICATION.md) documents the complete 240,000-experiment sensitivity run, Figures 1–3, 500 experiments checked against MATLAB using identical inputs, and direct betting checks over 1,313,164 shared p-values. Native random sampling differs across languages; shared-input checks verify the calculations separately.
 
 ## Datasets and outputs
 

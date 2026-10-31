@@ -70,6 +70,8 @@ MATLAB and NumPy use different random-draw and permutation algorithms. Using see
 
 The complete native sensitivity grid (2,400 settings, 100 repetitions each) and Figures 1–3 were run locally. Across 500 experiments using identical inputs, MATLAB and Python produced identical p-values, candidate selections, detection delays, and false-alarm flags. Independently sampled native runs have the differences documented in the verification summary.
 
+Direct betting checks also cover 1,060 shared streams containing 1,313,164 p-values, including long streams and histogram-boundary cases. Python follows MATLAB's legacy histogram bin-edge rounding and inclusion rules; the interpolation formulas and scientific parameters are retained. Small independent MATLAB fixtures test those boundaries in both Python execution paths.
+
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
 ```

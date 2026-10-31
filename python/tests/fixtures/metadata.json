@@ -105,6 +105,53 @@
       "File": "neighbor_ties.npz",
       "Bytes": 2045,
       "SHA256": "741e41765b6cb920576bef4bc5e7262278bca8864b30fedc1e326fc2f45e5fa0"
+    },
+    {
+      "File": "histogram_boundaries.npz",
+      "Bytes": 54429,
+      "SHA256": "11c429a8df2bc3d1bcefbf79c41f821d029c8867894551aeb43c87fc87b280a2"
     }
-  ]
+  ],
+  "HistogramBoundaryRegression": {
+    "CreatedUTC": "2026-10-31T21:16:21.056172+00:00",
+    "MatlabVersion": "25.2.0.2998904 (R2025b)",
+    "Source": "Independent MATLAB HIST calls on boundary/nextafter probes and original MATLAB combination outputs on shared synthetic p-values",
+    "OracleMATFileSHA256": "b7572977bd5ba0367518fc82e74fcd8f0becc828fd7feac7a002d8c49f5beb17",
+    "OracleExporterSHA256": "944aca4e6b42270d5eddd7f2106ca24533078bb3bc725a24ea994a32a29c91a0",
+    "ProbeInputSHA256": "d448450ea0e94f78f3cdf22d9d3e1bfc29140b09c1013a5a5df41c9fc7163aaf",
+    "SharedStreamInputSHA256": "1fa9c4badfd48138bb50b11bf6da36ba53dffab405e07f434b85e7d6915977b7",
+    "MatlabHistogramSourceSHA256": "109508dc1765de3d42981aa0fcd0cba2d3e2d6648a4fc81eb13b6556438cce30",
+    "StreamPrefixSources": [
+      {
+        "CaseId": 1032,
+        "PrefixLength": 45,
+        "MatlabPacketSHA256": "5a6d99a17202bf20faae266fcd4654a1e23afae62956e47d42f783fb214d440b"
+      },
+      {
+        "CaseId": 1033,
+        "PrefixLength": 294,
+        "MatlabPacketSHA256": "f7f6ca2e607fd186701757150311420a7ea3e233e64f69ef6a7b96588000bcbd"
+      }
+    ],
+    "BinConfigurations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "ExpectedOutputsComputedByPython": false,
+    "DatasetSourceDataIncluded": false,
+    "Notes": "Synthetic p-values only; one-based MATLAB memberships. Runtime tests recover counts from bets at bin centers and check both cautious implementations."
+  }
 }

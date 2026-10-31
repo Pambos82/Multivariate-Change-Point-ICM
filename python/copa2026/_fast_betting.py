@@ -53,8 +53,10 @@ def _histogram_candidates(pvalues):
     n=len(pvalues);row=np.arange(n);start=np.maximum(0,row-200)
     all_counts=[];occupied=[]
     for bins,centers in enumerate(_HIST_CENTERS,1):
-        edges=(centers[:-1]+centers[1:])/2
-        membership=np.searchsorted(edges,pvalues,side='left')
+        # Match HIST's left + diff/2 edges, eps shift and HISTC inclusion.
+        edges=centers[:-1]+np.diff(centers)/2
+        edges=edges+np.spacing(edges)
+        membership=np.searchsorted(edges,pvalues,side='right')
         one_hot=np.zeros((n,bins),dtype=np.int64)
         one_hot[row,membership]=1
         prefix=np.concatenate((np.zeros((1,bins),dtype=np.int64),np.cumsum(one_hot,axis=0)),axis=0)

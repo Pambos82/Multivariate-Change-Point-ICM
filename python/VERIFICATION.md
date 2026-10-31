@@ -23,11 +23,12 @@ The bounded sweep was resumed with its recorded output directory. Full native se
 
 ## Test results
 
-**78 tests and 45 subtests passed** in the clean environment. Coverage includes:
+**97 tests and 45 subtests passed** in the clean environment after the histogram boundary correction. Coverage includes:
 
 - All four dataset checksums, shapes and exact numeric values against newly computed MATLAB matrix digests.
 - Betting boundaries, repeated values, candidate histories, 100/200/5000-position windows, startup behavior, uniform fallbacks and very small distances.
 - Numeric, cell-like and structured p-value inputs, tie handling and random-draw consumption.
+- Independent MATLAB histogram memberships, counts and factors for 1–15 bins, plus boundary-stream candidate histories in both Python execution paths.
 - Both NCMs, the K = 1 covariance convention and deterministic nearest-neighbour tie ordering.
 - Native RNG repeatability and the benchmark's interleaved preparation/experiment sequence.
 - Python NPZ replay and actual MATLAB v7/v7.3 benchmark replay.
@@ -68,6 +69,8 @@ A separate **full benchmark** used native NumPy random inputs: 100 repetitions o
 
 Native Python and MATLAB random generators do not produce identical samples from equal seed numbers. This native run is distinct from the paired shared-input verification above. Delay statistics include detected repetitions only. A second native one-repetition smoke run passed in the fresh environment with only the final eight-column table on the console.
 
+After the histogram boundary correction, a fresh full 100-repetition benchmark on each dataset reproduced every saved native numerical array and decision bit for bit; its performance and per-repetition CSV files were byte-identical to the earlier run. Own-archive replay and both MATLAB v7/v7.3 fixture replays also passed for all four datasets. Each command printed only the final header and four data rows, with no stderr output. New results were saved separately from the existing runs.
+
 ## Additional 100-repetition shared-input check
 
 The largest detection-rate difference in the native sensitivity grids occurred for Sensorless at K = 81 and covariance diagonal adjustment = 0.01: MATLAB detected 69 of 100 changes; Python detected 51 of 100. A targeted check regenerated the actual Python random-input plan and exactly reproduced its saved checkpoint. MATLAB then independently recomputed NCMs and betting histories using the same prepared matrix, sampled reference/query rows, shifts, and tie-breaking uniforms.
@@ -107,8 +110,28 @@ Air Quality input files remain outside the publication package. Figure 3 uses na
 
 A four-job K = 1/50 check covered both NCMs using 16 configured workers. Two-job K = 50 checks passed partial execution, resume, and completed-run reuse with 16 configured workers. Following a transient Windows progress-file replacement error in the full run, all saved scientific checkpoints were recovered without recomputing the experiment jobs. The file writer's bounded retry behavior passed seven additional tests; a fresh partial/resume check matched the corresponding full-run inputs and decisions exactly. These smoke checks are separate from the completed full sensitivity run.
 
+## Histogram boundary correction and direct betting checks
+
+A larger direct comparison found that the earlier Python histogram calculation rounded four internal bin boundaries differently from MATLAB's legacy `hist`. Ordinary random streams agreed, but deliberately constructed boundary/adjacent-float streams could assign an observation to a different bin. In one such synthetic stream, the first alarm was observation 685 in Python versus 687 in MATLAB.
+
+Both Python execution paths now reproduce MATLAB's edge construction, `eps` shift and bin-inclusion rule. Histogram density and interpolation formulas are retained, as are cautious epsilon = 100, W = 5000, alarm threshold = 100, and all kNN calculations. MATLAB code was not changed.
+
+After applying the correction, **fresh MATLAB and actual publication Python evaluations** each processed the same 1,060 binary float64 streams, containing **1,313,164 p-value positions**, with 16 workers per evaluation phase. The input set includes uniform and biased random values, repeated values, histogram boundaries and neighbouring floats, extremely small spans, startup/window lengths, and 16 streams of length 8,192. The counts include 32 overlapping 5,000/5,001-position prefixes used to check the transition between Python execution paths; they are not all independent null-uniform draws.
+
+All 1,060 streams passed:
+
+- Candidate selections, fallback flags, status codes, strict capital-threshold alarms, and all NaN/infinity masks matched exactly.
+- All 32 within-language prefix checks passed, including the 5,000-position look-back boundary.
+- Raw kNN values matched exactly. The largest absolute difference in their integral constants was 2.84e-14.
+- Maximum absolute log-capital difference was 3.64e-12; maximum finite-capital difference scaled by `max(1,abs(MATLAB))` was 5.97e-14. All finite arrays passed the declared 2e-10 absolute-plus-relative tolerance.
+- Both languages overflowed linear capital at the same 381,971 positions in the deliberately extreme streams. All log-capital values were finite; no linear/log alarm disagreements occurred in these checks.
+
+The package includes a small independent MATLAB boundary fixture and 19 new regression tests. They cover memberships/counts/factors for 1–15 bins, both execution paths, and a real cautious-selection discrepancy from the former arithmetic. All 19 pass with the correction; an isolated copy of the old code fails eight, confirming that the regressions detect the issue. The full suite passes 97 tests and 45 subtests.
+
+A separate read-only impact scan examined **123,088,741 saved native Python p-values** from all 2,400 sensitivity checkpoints, the full four-dataset benchmark, and Air Quality. None equals any of the four affected representable values. This bin-membership correction therefore leaves histogram counts unchanged for those saved inputs. The scan did not recompute capital, and the complete 240,000-experiment feature-based sweep was not rerun after this correction. Existing runs and their original source/version metadata were preserved; their completed CSV files remain available for figure reconstruction.
+
 ## Coverage limits
 
-Full native workflows were run; the 500 shared-input experiments cover the settings described above, not every repetition of the complete sensitivity grids. Numerical agreement on these inputs does not establish every theoretical martingale assumption. Other operating systems and Python versions were not execution-tested. MATLAB-specific MAT/FIG output formats are represented by Python NPZ/JSON/CSV arrays and PNG/PDF figures, with the plotted rows retained for reconstruction. The detailed local run and comparison reports are excluded from publication; this summary and the small portable test fixtures are included.
+Full native workflows were run. The 500 shared-input feature-based experiments and the 1,060 direct betting streams cover the settings described above, not every possible input or every repetition of the complete sensitivity grids. Numerical agreement on these inputs does not establish every theoretical martingale assumption. Other operating systems and Python versions were not execution-tested. MATLAB-specific MAT/FIG output formats are represented by Python NPZ/JSON/CSV arrays and PNG/PDF figures, with the plotted rows retained for reconstruction. The detailed local run and comparison reports are excluded from publication; this summary and the small portable test fixtures are included.
 
 Credit results contain information from [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud), available under the [Open Database License](https://opendatacommons.org/licenses/odbl/1-0/). Keep the [data attribution](DATA_ATTRIBUTION.md) and [license notices](LICENSE-NOTICE.md).

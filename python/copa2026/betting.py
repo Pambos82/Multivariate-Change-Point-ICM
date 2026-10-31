@@ -150,9 +150,11 @@ def _histogram_bet(history, p, maximum_bins):
     """Legacy HIST centers, decrement-until-nonempty rule and interpolation."""
     for bins in range(maximum_bins, 0, -1):
         centers = _HIST_CENTERS[bins - 1]
-        edges = (centers[:-1] + centers[1:]) / 2
-        # Legacy MATLAB HIST includes the right edge: midpoint ties go left.
-        counts = np.bincount(np.searchsorted(edges, history, side="left"), minlength=bins)
+        # Reproduce HIST's edge arithmetic and eps shift before its left-
+        # inclusive HISTC count. An algebraic midpoint changes one-ulp ties.
+        edges = centers[:-1] + np.diff(centers) / 2
+        edges = edges + np.spacing(edges)
+        counts = np.bincount(np.searchsorted(edges, history, side="right"), minlength=bins)
         if np.all(counts > 0):
             break
     density = counts / np.sum(counts) * bins
