@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "copa2026"
+version = "0.2.0"
+description = "Feature-based conformal martingale benchmark and figure workflows"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0,<3", "scipy>=1.13,<2", "matplotlib>=3.9,<4", "openpyxl>=3.1,<4", "h5py>=3.11,<4"]
+license = "MIT"
+authors = [{name = "Charalambos Eliades"}, {name = "Harris Papadopoulos"}]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools]
+packages = ["copa2026"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

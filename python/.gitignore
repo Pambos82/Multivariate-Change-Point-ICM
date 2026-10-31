@@ -1,0 +1,40 @@
+# Generated experiment outputs and verification reports.
+/results/*
+!/results/README.md
+
+# Local environments and build artifacts.
+/.venv/
+/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+/build/
+/dist/
+
+# Exactly four public numeric benchmark inputs.
+*.npz
+*.mat
+/datasets/*
+!/datasets/CASP.npz
+!/datasets/MiniBooNEPID.npz
+!/datasets/Sensorlessdrivediagnosis.npz
+!/datasets/creditcard_X.npz
+!/datasets/README.md
+!/datasets/SOURCES_AND_LICENSES.md
+!/datasets/PREPROCESSING.md
+!/datasets/CITATIONS.bib
+!/datasets/SHA256SUMS.txt
+!/datasets/manifest.json
+!/tests/fixtures/*.npz
+!/tests/fixtures/*.mat
+
+# Local Air Quality inputs are obtained and prepared separately.
+*.xlsx
+*.xls
+*airquality*.npz
+/local_data/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

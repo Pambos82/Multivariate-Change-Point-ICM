@@ -1,0 +1,319 @@
+{
+  "FormatVersion": 1,
+  "CreatedUTC": "2026-10-31T20:30:02.725162+00:00",
+  "Implementation": "Python",
+  "ScientificDefaults": {
+    "Epsilon": 100,
+    "LookBackWindow": 5000,
+    "AlarmThreshold": 100,
+    "Seed": 42,
+    "Repetitions": 100,
+    "ReferenceSize": 4096,
+    "SegmentSize": 256,
+    "K": 50,
+    "CovarianceDiagonalAdjustment": 0.001,
+    "KnnBettingK": [
+      5,
+      10,
+      15
+    ],
+    "KnnHistory": 100,
+    "HistogramHistory": 200
+  },
+  "Datasets": 4,
+  "RuntimeOutputsIncluded": false,
+  "ManifestExcludesItself": true,
+  "Files": [
+    {
+      "File": ".gitignore",
+      "Bytes": 747,
+      "SHA256": "6f09ea555d4d4e17d9d6048e1aa621482c409c549f42ddc43ab27e4a656c3876"
+    },
+    {
+      "File": "DATA_ATTRIBUTION.md",
+      "Bytes": 1342,
+      "SHA256": "54e67745bcd39afc404c9891ee8f5bf08e7058cd67446b6b1b5ca8e1b84d1603"
+    },
+    {
+      "File": "EXPERIMENTS.md",
+      "Bytes": 5692,
+      "SHA256": "4abf241fb69615da875fb3d4aec4be4414c1aae8dffe865767dc994841db2337"
+    },
+    {
+      "File": "LICENSE",
+      "Bytes": 1100,
+      "SHA256": "f2115dbd2f116faea81a68d4ee71990a44548021e5f24f4a0dce402d468b7011"
+    },
+    {
+      "File": "LICENSE-NOTICE.md",
+      "Bytes": 2897,
+      "SHA256": "a9110bb25e255f9e4b5fa39edee3cfba8229ec9cae88d85fa7646069b0c160ec"
+    },
+    {
+      "File": "README.md",
+      "Bytes": 5606,
+      "SHA256": "3ea22003a08450cc6c7d4930106068e7879fe8a0512f6a0839dddab2a082269a"
+    },
+    {
+      "File": "VERIFICATION.md",
+      "Bytes": 12283,
+      "SHA256": "8b25be430c7c8f56a15be29cd8b437a6bdb69c4827a8e89269b432320815238d"
+    },
+    {
+      "File": "copa2026/__init__.py",
+      "Bytes": 512,
+      "SHA256": "40d781cf19fd086778adab9c5095ef3693127195706e359b6f497d2b17c81d7b"
+    },
+    {
+      "File": "copa2026/_fast_betting.py",
+      "Bytes": 7269,
+      "SHA256": "9c1ec0e9d4bb6d05af5630efe3fb0629aedbb02e37ef43fb0efe8657bfd7e089"
+    },
+    {
+      "File": "copa2026/benchmarks.py",
+      "Bytes": 12874,
+      "SHA256": "894148c208a3e9984f8942bdb676bdd8662e52ebabd1543fcdd59ddc2088f0d2"
+    },
+    {
+      "File": "copa2026/betting.py",
+      "Bytes": 9933,
+      "SHA256": "8fe6cdc7e67e0b522f66b08ff9fc45875318991e00a8f99d77739fad66ad4f41"
+    },
+    {
+      "File": "copa2026/data.py",
+      "Bytes": 3409,
+      "SHA256": "216f713f42c9a601a25c4bcdc85df1b027740067db6726122bd17ee53b1ac2ae"
+    },
+    {
+      "File": "copa2026/experiment.py",
+      "Bytes": 22937,
+      "SHA256": "9d265ef2c74bc69ebef9e9180e744edb409fda2efec328c8d8141a87883d7fb3"
+    },
+    {
+      "File": "copa2026/figures.py",
+      "Bytes": 35271,
+      "SHA256": "46850abd5fdefe4b0382f8ccc4bcd423735cd37566fa1f65888ada3020be660e"
+    },
+    {
+      "File": "copa2026/io.py",
+      "Bytes": 6031,
+      "SHA256": "98d208b613b64cc37314d1cefb3604d0b7677e617ec7e8a2ed602379935afbf7"
+    },
+    {
+      "File": "datasets/CASP.npz",
+      "Bytes": 1513883,
+      "SHA256": "5c30dd9d7fd4681aa64f8fce06724a2a8834bba5146fac8c79fbf8d0176798d6"
+    },
+    {
+      "File": "datasets/CITATIONS.bib",
+      "Bytes": 4562,
+      "SHA256": "bd295a781e7044e8d199f6e0484849e9481169b92445455b78808fbd16732f04"
+    },
+    {
+      "File": "datasets/MiniBooNEPID.npz",
+      "Bytes": 33884458,
+      "SHA256": "6e17c642c0695a7ca02e32c57e542261a4dc5f0a606101e981721ca715b75d29"
+    },
+    {
+      "File": "datasets/PREPROCESSING.md",
+      "Bytes": 7612,
+      "SHA256": "b7c5ff130d73ee49f86ef3c159606bdd4ace782a2bff37ca5f621cda6fd769a9"
+    },
+    {
+      "File": "datasets/README.md",
+      "Bytes": 1842,
+      "SHA256": "de2a6d198280c9c57a62f725f801fe1efbf0618c0c97e16362099a24496258c0"
+    },
+    {
+      "File": "datasets/SHA256SUMS.txt",
+      "Bytes": 340,
+      "SHA256": "db6d743d89432a22d7ee7857753a85184df231d3ab065983c504106af8742d27"
+    },
+    {
+      "File": "datasets/SOURCES_AND_LICENSES.md",
+      "Bytes": 10298,
+      "SHA256": "db677b2963b64743c53b849cf695672f84ed3e8340d34f29305372df8a67ffeb"
+    },
+    {
+      "File": "datasets/Sensorlessdrivediagnosis.npz",
+      "Bytes": 13886638,
+      "SHA256": "2e78fdd7e442389eae6c373a7b9d2ec53a45e64702682dce666180d0a77404d3"
+    },
+    {
+      "File": "datasets/creditcard_X.npz",
+      "Bytes": 61288189,
+      "SHA256": "a148ca8e1f93ec6ff688ece69aafa750a58a58ab6c8d82212de1aca7a1e417bd"
+    },
+    {
+      "File": "datasets/manifest.json",
+      "Bytes": 2461,
+      "SHA256": "b142592e4f61c718a9bfe972ff48efc1ad8559e68bc70f9367748ffe1635243c"
+    },
+    {
+      "File": "prepare_airquality_input.py",
+      "Bytes": 545,
+      "SHA256": "f73fc7fad1c5b8586646acd85682d6b5b95fa72763b0c67e33c87eef8bc13e8b"
+    },
+    {
+      "File": "pyproject.toml",
+      "Bytes": 611,
+      "SHA256": "2811508ebd00a5c9ef12ac899e55dd86d7be6b75937426b500e20736d71b88c0"
+    },
+    {
+      "File": "reconstruct_copa_figures.py",
+      "Bytes": 595,
+      "SHA256": "f945f19664f7e74694373d331ea023109dbacc15ff6cc46dcb6d2fad6e9a135b"
+    },
+    {
+      "File": "requirements.txt",
+      "Bytes": 151,
+      "SHA256": "5a976a9e6f93e98af18cc1c3611d02b0cecac690ce6735553f83c855f5cd2955"
+    },
+    {
+      "File": "results/README.md",
+      "Bytes": 463,
+      "SHA256": "8a08494aad3e689ddb7ef46e8115a7acdbab4b83e3a03e2041623d77ae47279f"
+    },
+    {
+      "File": "run_benchmarks.py",
+      "Bytes": 1012,
+      "SHA256": "2c23d838b6ccd53fd4cbefef885a38dc6d21b02117b29f6b5a170cf313098b87"
+    },
+    {
+      "File": "run_full_figure_sweeps.py",
+      "Bytes": 1637,
+      "SHA256": "ad442027d78ef560903fbe4c0b03bbc57cb7a3e853eea0b24f02c8022fecf0ef"
+    },
+    {
+      "File": "run_real.py",
+      "Bytes": 730,
+      "SHA256": "eadcacbaea89b0d6ea01240f7a92db90c5ea5da6d917c1868bd81125d81f1c61"
+    },
+    {
+      "File": "tests/fixtures/README.md",
+      "Bytes": 1245,
+      "SHA256": "f3279ee5fd105f89a77de6bd980a0beda26e8dcbedb0968843ba6c61133f5bc3"
+    },
+    {
+      "File": "tests/fixtures/benchmark_matlab_v7.mat",
+      "Bytes": 16763,
+      "SHA256": "491d66205939e5120db0ba0e1d0cd74e79d2634836dee9044790ca7cbd6bda75"
+    },
+    {
+      "File": "tests/fixtures/benchmark_matlab_v73.mat",
+      "Bytes": 51856,
+      "SHA256": "716b8d465f8d0d631b5b397b6ea187c9cf7c3e43c78521aa854da376b5ca8985"
+    },
+    {
+      "File": "tests/fixtures/betting_alternating.npz",
+      "Bytes": 10798,
+      "SHA256": "ac740f09ca1f665026d4cd0b5e60cc23f43455f2ef267b5b9e986a3ffe58805e"
+    },
+    {
+      "File": "tests/fixtures/betting_boundaries.npz",
+      "Bytes": 10249,
+      "SHA256": "0a8302185e245ff69c25f0e18544f754d7df76bbae29baaac0bec863f0bf86fb"
+    },
+    {
+      "File": "tests/fixtures/betting_rolling_window.npz",
+      "Bytes": 413611,
+      "SHA256": "1f0a2618905702c4116b3a327baa01622b5e1e6e7408f693cb4979b7ddbf06f8"
+    },
+    {
+      "File": "tests/fixtures/betting_ties.npz",
+      "Bytes": 5720,
+      "SHA256": "539a1acef266dbb15c4039a743ac3a7ddaddd595311e1e48ad2b41f6de9dccb4"
+    },
+    {
+      "File": "tests/fixtures/betting_tiny_distances.npz",
+      "Bytes": 2272,
+      "SHA256": "104b95fe75b6e6f608b34ff143d631b13d49e6a0974a807d699fad7d952c0d8a"
+    },
+    {
+      "File": "tests/fixtures/ellipsoid_k1.npz",
+      "Bytes": 3580,
+      "SHA256": "67079b46c5fb828f06d6afd8dfc09053902175d810b22974dce49a5e9378cee2"
+    },
+    {
+      "File": "tests/fixtures/experiment_credit.npz",
+      "Bytes": 1150294,
+      "SHA256": "d1aa5bf5b4f81cd59b9c39d23b45b044cdbe953841de07b5baf973aeeb79d429"
+    },
+    {
+      "File": "tests/fixtures/experiment_particle.npz",
+      "Bytes": 1839617,
+      "SHA256": "ce986385b1cb2a439dbd13c9ebf8f1c93cccf32c0ad873f170607e27415d10ab"
+    },
+    {
+      "File": "tests/fixtures/experiment_protein.npz",
+      "Bytes": 428355,
+      "SHA256": "72e5ecaf4400e0f5414dd0f1ff3c627e2a144a9610fbea0675a2271de958d603"
+    },
+    {
+      "File": "tests/fixtures/experiment_sensorless.npz",
+      "Bytes": 1833749,
+      "SHA256": "6fa6f10ae67cd373da48d11ecbcc28e4bf223e7ec3586fce0240395b2240394e"
+    },
+    {
+      "File": "tests/fixtures/metadata.json",
+      "Bytes": 4097,
+      "SHA256": "7ba2d178318a55c784d93603d829d27da3fc775b89517a0f7b59b2724e3fe490"
+    },
+    {
+      "File": "tests/fixtures/neighbor_ties.npz",
+      "Bytes": 2045,
+      "SHA256": "741e41765b6cb920576bef4bc5e7262278bca8864b30fedc1e326fc2f45e5fa0"
+    },
+    {
+      "File": "tests/test_airquality.py",
+      "Bytes": 3802,
+      "SHA256": "306ec525cc7ff821502eb46b16e257bcb8be1922fe0b16f1a685b835db82829f"
+    },
+    {
+      "File": "tests/test_atomic_json_retry.py",
+      "Bytes": 5535,
+      "SHA256": "9c1b036f9b87c48e2f0da6bda5d89af206e84dcd8da5a8bdf0d380b60e1fc265"
+    },
+    {
+      "File": "tests/test_benchmarks.py",
+      "Bytes": 6030,
+      "SHA256": "3b428d2b64fb2299950f73b72bc4f0cd3861a1583f135e1100d6e69d0200d0e3"
+    },
+    {
+      "File": "tests/test_betting.py",
+      "Bytes": 7396,
+      "SHA256": "ce25104972ec7862f3485f5bee320fdaa053f76076689bb0f9c833febbe26c3f"
+    },
+    {
+      "File": "tests/test_betting_fast.py",
+      "Bytes": 3266,
+      "SHA256": "6a920f6c4beb50622f935ee511cf2e1e5882ae48cead0091eeb71ab7c397f2fd"
+    },
+    {
+      "File": "tests/test_data.py",
+      "Bytes": 1899,
+      "SHA256": "e42f9d9c584e1bc23fa82f5990253ee176c1337b37705069bcf05407b3191275"
+    },
+    {
+      "File": "tests/test_experiment.py",
+      "Bytes": 5932,
+      "SHA256": "09cfe1b49f116602c387c211eec00d0b8d54090be572029968b0ee5cc4e72d95"
+    },
+    {
+      "File": "tests/test_extended_ncms.py",
+      "Bytes": 1193,
+      "SHA256": "59e3afab8444bab3989378762a2c6c92a3e86324ded77837539c2d237b2efcd9"
+    },
+    {
+      "File": "tests/test_figures.py",
+      "Bytes": 5116,
+      "SHA256": "00b996eaa2e2103bee92f82edafae628da26d8f23427277832152af08ef49732"
+    },
+    {
+      "File": "tests/test_matlab_reference.py",
+      "Bytes": 3445,
+      "SHA256": "d7dabdf097d8e270d4bf9c8de5afa4c29f8112fe1508a0ceb65889fe36fc385f"
+    }
+  ],
+  "UpdatedUTC": "2026-10-31T19:03:08.233Z"
+}

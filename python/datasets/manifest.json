@@ -1,0 +1,63 @@
+{
+  "format": "NPZ, float64 numeric X, allow_pickle=False",
+  "files": [
+    {
+      "dataset": "protein",
+      "file": "CASP.npz",
+      "shape": [
+        45730,
+        9
+      ],
+      "dtype": "float64",
+      "sha256": "5c30dd9d7fd4681aa64f8fce06724a2a8834bba5146fac8c79fbf8d0176798d6",
+      "license": "CC-BY-4.0",
+      "matrix_sha256": "c90367f7a410f0a5dfa26bb723256a82f37f42a02d52b7e97727b8b806bc5064",
+      "source_mat_file": "../../matlab/datasets/CASP.mat",
+      "source_mat_sha256": "48343f1531ca24a1319a0f3e6d93f88ad5e9a16f981be2d2ec2cd6fe1a870694"
+    },
+    {
+      "dataset": "particle",
+      "file": "MiniBooNEPID.npz",
+      "shape": [
+        130064,
+        50
+      ],
+      "dtype": "float64",
+      "sha256": "6e17c642c0695a7ca02e32c57e542261a4dc5f0a606101e981721ca715b75d29",
+      "license": "CC-BY-4.0",
+      "matrix_sha256": "4da60c0d822531c5a3a6a5cd4461560ef885edd5ff988bc95f938433dbb90531",
+      "source_mat_file": "../../matlab/datasets/MiniBooNEPID.mat",
+      "source_mat_sha256": "3920d20fe065e2604f60e9a66cd75b069c2ccc6e02c3022b4f1f1c8aa9192caa"
+    },
+    {
+      "dataset": "sensorless",
+      "file": "Sensorlessdrivediagnosis.npz",
+      "shape": [
+        58509,
+        48
+      ],
+      "dtype": "float64",
+      "sha256": "2e78fdd7e442389eae6c373a7b9d2ec53a45e64702682dce666180d0a77404d3",
+      "license": "CC-BY-4.0",
+      "matrix_sha256": "bac417ad0f91b2cf57682c6318bb3699206dff0f9f142c4d67df952d32f4775b",
+      "source_mat_file": "../../matlab/datasets/Sensorlessdrivediagnosis.mat",
+      "source_mat_sha256": "5d31f8fef208f4fb7ca065b193854a8e2e1128b699aa714c6cff0ecaee25e6aa"
+    },
+    {
+      "dataset": "credit",
+      "file": "creditcard_X.npz",
+      "shape": [
+        284807,
+        29
+      ],
+      "dtype": "float64",
+      "sha256": "a148ca8e1f93ec6ff688ece69aafa750a58a58ab6c8d82212de1aca7a1e417bd",
+      "license": "ODbL-1.0 AND DbCL-1.0",
+      "matrix_sha256": "151df31c744330f5ab93d1620b5cf7656c84b88dbe9de3935d3edb09ab59ee3d",
+      "source_mat_file": "../../matlab/datasets/creditcard_X.mat",
+      "source_mat_sha256": "6b422568deaa07c2d53cf8f13397e7cc1330b3f2e8927f99ef5a8d10af1c3df6"
+    }
+  ],
+  "conversion": "Numeric values, row order and feature order retained; storage changed from MAT/table to NPZ float64 X.",
+  "matrix_sha256_format": "Little-endian float64 values in MATLAB column-major (Fortran) order."
+}

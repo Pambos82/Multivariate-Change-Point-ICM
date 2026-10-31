@@ -1,0 +1,110 @@
+{
+  "CreatedUTC": "2026-10-31T17:04:00.948Z",
+  "MatlabVersion": "25.2.0.2998904 (R2025b)",
+  "Source": "Current sibling MATLAB package independently executed on shared numeric inputs",
+  "Epsilon": 100,
+  "LookBackWindow": 5000,
+  "AlarmThreshold": 100,
+  "NumericMatrices": {
+    "protein": {
+      "Rows": 45730,
+      "Features": 9,
+      "SHA256FortranFloat64LE": "c90367f7a410f0a5dfa26bb723256a82f37f42a02d52b7e97727b8b806bc5064"
+    },
+    "particle": {
+      "Rows": 130064,
+      "Features": 50,
+      "SHA256FortranFloat64LE": "4da60c0d822531c5a3a6a5cd4461560ef885edd5ff988bc95f938433dbb90531"
+    },
+    "sensorless": {
+      "Rows": 58509,
+      "Features": 48,
+      "SHA256FortranFloat64LE": "bac417ad0f91b2cf57682c6318bb3699206dff0f9f142c4d67df952d32f4775b"
+    },
+    "credit": {
+      "Rows": 284807,
+      "Features": 29,
+      "SHA256FortranFloat64LE": "151df31c744330f5ab93d1620b5cf7656c84b88dbe9de3935d3edb09ab59ee3d"
+    }
+  },
+  "MatlabCodeSHA256": {
+    "combination.m": "0d2e033fa9733ab6e338c1e32e2aa4f756470d212e4e45957a39bc503e26adb1",
+    "knn_betting_prepare.m": "811c7e392918db7d1c4764b83439eea0e9e4bb809285901741b357ec605e5ee9",
+    "knn_ellipsoid_pdf.m": "38145fef8182a18fb154ef9601c93226d9c37b2a239588e2cac223c5b1afe82e",
+    "prepare_airquality_input.m": "4c9c9b19f39cd034e42379e55bd2a93fda99a54e526f7fa22c722107c56672d6",
+    "pvalues.m": "8903ac582f3b5b269cc498a779ae3f0141926fe1b6220fd988905843e75de930",
+    "reconstruct_copa_figures.m": "ee1a86c116ef03406604a6da04a573e20834475cfefd20ca35a0c1035f75ab21",
+    "run_benchmarks.m": "3902704b0d7e53d19b22f5be387502ff475b28343720cf55a157116c1ff44858",
+    "run_full_figure_sweeps.m": "9c54b2d14c44b034b95ed72b038e8f00ef77da45a5e1656c731d802c0817f575",
+    "run_knn_cm_experiment.m": "edecf210d456dc750147fe3cb13f45b484dafd2f751c64584dca3cde3bbd0392",
+    "run_real.m": "bc694edacd9605fd960258afbf3ba5a384dbace31ed103a8904f5053e77574a7",
+    "summarize_results.m": "15eeb96ceb21dc7c073c8f72abd1336df5c69d76e9f098c8a66ea3b31a67bef8"
+  },
+  "Fixtures": [
+    {
+      "File": "benchmark_matlab_v7.mat",
+      "Bytes": 16763,
+      "SHA256": "491d66205939e5120db0ba0e1d0cd74e79d2634836dee9044790ca7cbd6bda75"
+    },
+    {
+      "File": "benchmark_matlab_v73.mat",
+      "Bytes": 51856,
+      "SHA256": "716b8d465f8d0d631b5b397b6ea187c9cf7c3e43c78521aa854da376b5ca8985"
+    },
+    {
+      "File": "betting_alternating.npz",
+      "Bytes": 10798,
+      "SHA256": "ac740f09ca1f665026d4cd0b5e60cc23f43455f2ef267b5b9e986a3ffe58805e"
+    },
+    {
+      "File": "betting_boundaries.npz",
+      "Bytes": 10249,
+      "SHA256": "0a8302185e245ff69c25f0e18544f754d7df76bbae29baaac0bec863f0bf86fb"
+    },
+    {
+      "File": "betting_rolling_window.npz",
+      "Bytes": 413611,
+      "SHA256": "1f0a2618905702c4116b3a327baa01622b5e1e6e7408f693cb4979b7ddbf06f8"
+    },
+    {
+      "File": "betting_ties.npz",
+      "Bytes": 5720,
+      "SHA256": "539a1acef266dbb15c4039a743ac3a7ddaddd595311e1e48ad2b41f6de9dccb4"
+    },
+    {
+      "File": "betting_tiny_distances.npz",
+      "Bytes": 2272,
+      "SHA256": "104b95fe75b6e6f608b34ff143d631b13d49e6a0974a807d699fad7d952c0d8a"
+    },
+    {
+      "File": "ellipsoid_k1.npz",
+      "Bytes": 3580,
+      "SHA256": "67079b46c5fb828f06d6afd8dfc09053902175d810b22974dce49a5e9378cee2"
+    },
+    {
+      "File": "experiment_credit.npz",
+      "Bytes": 1150294,
+      "SHA256": "d1aa5bf5b4f81cd59b9c39d23b45b044cdbe953841de07b5baf973aeeb79d429"
+    },
+    {
+      "File": "experiment_particle.npz",
+      "Bytes": 1839617,
+      "SHA256": "ce986385b1cb2a439dbd13c9ebf8f1c93cccf32c0ad873f170607e27415d10ab"
+    },
+    {
+      "File": "experiment_protein.npz",
+      "Bytes": 428355,
+      "SHA256": "72e5ecaf4400e0f5414dd0f1ff3c627e2a144a9610fbea0675a2271de958d603"
+    },
+    {
+      "File": "experiment_sensorless.npz",
+      "Bytes": 1833749,
+      "SHA256": "6fa6f10ae67cd373da48d11ecbcc28e4bf223e7ec3586fce0240395b2240394e"
+    },
+    {
+      "File": "neighbor_ties.npz",
+      "Bytes": 2045,
+      "SHA256": "741e41765b6cb920576bef4bc5e7262278bca8864b30fedc1e326fc2f45e5fa0"
+    }
+  ]
+}
